@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Glow Blog
 An easy to use, mobile responsive, single-author blogging system using Vue JS for the front-end dashboard, Firebase for authentication, php for the back-end, and JSON Web Tokens to enforce security. Glow Blog uses a flat file system in the back-end for speed and simplicity over using SQL databases. It is headless in that there is no template system for front-facing visualization of the posts. Instead, an easy-to-use JavaScript API provides all the functionality needed to pull posts into a website built using any technology stack.
 
@@ -112,3 +113,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [php-jwt](https://github.com/firebase/php-jwt) Encode/decode JSON Web Tokens (JWT) in php
 * [vue2-editor](https://www.npmjs.com/package/vue2-editor) Vue.js HTML editor based on Quill
 * [axios](https://github.com/axios/axios) HTTP client
+=======
+# Glow-Blog
+>>>>>>> abc6d8a2c0b1fe21e1c29f2760eebf432e351aa7
