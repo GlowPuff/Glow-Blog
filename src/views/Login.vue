@@ -48,7 +48,7 @@
             <div class="field">
               <p class="control">
                 <button
-									v-show="!this.setupSuccess"
+                  v-show="!this.setupSuccess"
                   @click.prevent="login"
                   :disabled="!this.visible"
                   class="button has-text-weight-bold is-fullwidth has-text-white is-primary"
@@ -76,8 +76,6 @@
 </template>
 
 <script>
-import firebase from "firebase/app";
-
 export default {
   data() {
     return {
@@ -88,45 +86,35 @@ export default {
       emailError: false,
       passError: false,
       setupError: false,
-      setupSuccess: false
+      setupSuccess: false,
+      errorMessage: "",
+      errorCode: ""
     };
   },
   methods: {
-    login() {
+    async login() {
       this.busy = true;
       this.setupError = false;
-			let self = this;
 
-			firebase
-			.auth()
-			.signInWithEmailAndPassword(this.inputEmail,this.inputPass)
-			.then(()=>{
-				self.setupSuccess=true;
-				self.visible=false;
-			})
-			.catch(error=>{
-          console.log("DEBUG: error login");
-          console.log(error);
-          if (typeof error !== "undefined") {
-            if (
-              error.hasOwnProperty("data") &&
-              error.data.hasOwnProperty("error")
-            )
-              self.errorMessage = error.data.error;
-            else if (error.hasOwnProperty("code"))
-              self.errorMessage = error.code;
-            else {
-              self.errorMessage = "Unknown error";
-            }
-          } else self.errorMessage = "Unknown error";
-          self.setupSuccess = false;
-          self.setupError = true;
-          self.busy = false;
-			});
+      try {
+        await this.$blogapi.login(
+          this.inputEmail,
+          this.inputPass
+        );
+        this.setupSuccess = true;
+        this.visible = false;
+      } catch (error) {
+        this.errorCode = error.message;
+        this.errorMessage = error.innerMessage;
+        this.setupSuccess = false;
+        this.setupError = true;
+      } finally {
+        this.busy = false;
+      }
     },
     navToDashboard() {
-			this.$router.replace('dashboard');
-		}
+      this.$router.replace("dashboard");
+    }
   },
   mounted() {
     this.visible = true;

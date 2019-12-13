@@ -66,6 +66,20 @@ class BlogAPI
 		}
 	}
 
+	async login( email, pass )
+	{
+		try
+		{
+			await firebase
+				.auth()
+				.signInWithEmailAndPassword( email, pass );
+			return new ApiResult( true );
+		} catch ( error )
+		{
+			throw new ApiResult( false, null, error.code, error.message );
+		}
+	}
+
 	async getSiteData()
 	{
 		try
