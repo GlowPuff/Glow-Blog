@@ -1,5 +1,5 @@
 # Glow Blog
-An easy to use, mobile responsive, single-author blogging system using Vue JS for the front-end dashboard, Firebase for authentication, php for the back-end, and JSON Web Tokens to enforce security. Glow Blog uses a flat file system in the back-end for speed and simplicity over using SQL databases. It is headless in that there is no template system for front-facing visualization of the posts. Instead, an easy-to-use JavaScript API provides all the functionality needed to pull posts into a website built using any technology stack.
+An easy to use, mobile responsive, single-author blogging system using Vue JS for the front-end dashboard, Firebase for authentication, php for the back-end ([using my backend project](https://github.com/GlowPuff/Glow-Blog-Backend)), and JSON Web Tokens to enforce security. Glow Blog uses a flat file system in the back-end for speed and simplicity over using SQL databases. It is headless in that there is no template system for front-facing visualization of the posts. Instead, an easy-to-use JavaScript API provides all the functionality needed to pull posts into a website built using any technology stack.
 
 ## Front-end Admin Dashboard Features (Vue JS)
 * Responsive, modern design
@@ -35,6 +35,7 @@ An easy to use, mobile responsive, single-author blogging system using Vue JS fo
 # Installation
 
 ## Project setup
+This project is the Dashboard front-end for my blog system. It uses my php-based backend system ([required, available here](https://github.com/GlowPuff/Glow-Blog-Backend)).
 ```
 npm install
 ```
@@ -50,6 +51,7 @@ npm run build
 ```
 
 ### Prerequisites
+[My back-end service](https://github.com/GlowPuff/Glow-Blog-Backend)
 PHP 5.6
 
 # Notes
