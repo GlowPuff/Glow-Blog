@@ -35,7 +35,7 @@ An easy to use, mobile responsive, single-author blogging system using Vue JS fo
 # Installation
 
 ## Project setup
-This project is the Dashboard front-end for my blog system. It uses my php-based backend system ([required, available here](https://github.com/GlowPuff/Glow-Blog-Backend)).
+This project is the Dashboard front-end for my blog system. It uses my php-based backend system ([required separately, available here](https://github.com/GlowPuff/Glow-Blog-Backend)).
 ```
 npm install
 ```
