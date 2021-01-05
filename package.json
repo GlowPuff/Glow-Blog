@@ -9,7 +9,7 @@
     "css-build": "node-sass --omit-source-map-url assets/styles.scss css/styles.css"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "firebase": "^6.6.2",
     "vue": "^2.6.10",
